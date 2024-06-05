@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+SERVER_H	server.h	2;"	d
+client_handle	server.c	/^void* client_handle(void* arg)$/;"	f
+count	server.c	/^static int count = 0;$/;"	v	file:
+curtain_status	server.c	/^static int curtain_status = 0;$/;"	v	file:
+door_status	server.c	/^static int door_status = 0;$/;"	v	file:
+error_handle	server.c	/^static void error_handle(const char* errmsg)$/;"	f	file:
+lamp_status	server.c	/^static int lamp_status = 0;$/;"	v	file:
+main	main.c	/^int main(int argc, char const *argv[])$/;"	f
+remove_clinet	server.c	/^void remove_clinet(int client)$/;"	f
+save_client	server.c	/^void save_client(int client)$/;"	f
+save_controller_status	server.c	/^void save_controller_status(const char* buf)$/;"	f
+send_all	server.c	/^void send_all(const char* buf, int size)$/;"	f
+send_controller_status	server.c	/^void send_controller_status(int client)$/;"	f
+server_init	server.c	/^void server_init(const char* port)$/;"	f
+server_run	server.c	/^void server_run()$/;"	f
+sockets	server.c	/^static int sockets[1024];$/;"	v	file:
+ssocket	server.c	/^static int ssocket;$/;"	v	file:
