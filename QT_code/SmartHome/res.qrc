@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>pm.png</file>
+        <file>bg.png</file>
+        <file>led_off.png</file>
+        <file>led_on.png</file>
+        <file>airc_off.png</file>
+        <file>airc_on.png</file>
+        <file>curtain_off.png</file>
+        <file>curtain_on.png</file>
+        <file>door_off.png</file>
+        <file>door_on.png</file>
+        <file>disconnect.png</file>
+        <file>login.png</file>
+        <file>line.png</file>
+        <file>connect.png</file>
+        <file>automode_off.png</file>
+        <file>manualmode_off.png</file>
+        <file>automode_on.png</file>
+        <file>manualmode_on.png</file>
+    </qresource>
+</RCC>
