@@ -38,7 +38,7 @@ void *send_data(void *arg)
     char buf[17];
     while (1)
     {
-        sleep(1);
+        
         memset(buf, 0x0, sizeof(buf));
         index = 0;
         buf[index ++] = 0X00;
@@ -81,6 +81,7 @@ void *send_data(void *arg)
             perror("send error");
             break;
         }
+        sleep(1);
     }
     
 }
@@ -142,10 +143,16 @@ void *reci_data(void *arg)
 			lcd_draw_bmp(43, 90, text, 0);
         }else if (reci_buf[0] == 0X05)  //阈值获取
         {
-            threshold_value[0] = (reci_buf[1] << 8) + reci_buf[2];  //湿度阈值
-            threshold_value[1] = (reci_buf[4] << 8) + reci_buf[5];  //温度阈值
+            threshold_value[1] = (reci_buf[1] << 8) + reci_buf[2];  //湿度阈值
+            threshold_value[0] = (reci_buf[4] << 8) + reci_buf[5];  //温度阈值
             threshold_value[2] = (reci_buf[7] << 8) + reci_buf[8];  //光照阈值
-            printf("wet = %d, temp = %d, lux = %d\n", threshold_value[0], threshold_value[1], threshold_value[2]);
+            printf("wet = %d, temp = %d, lux = %d\n", threshold_value[1], threshold_value[0], threshold_value[2]);
+        }else if (reci_buf[0] == 0X06)  //模式获取
+        {
+            mode = reci_buf[1];
+            sprintf(text, "%s_on.bmp", mode == 1 ? "manualmode" : "automode");
+            lcd_refresh(8, 30, 58, 80, 0);
+			lcd_draw_bmp(8, 30, text, 0);
         }
     }
     

@@ -92,7 +92,7 @@
         <property name="styleSheet">
          <string notr="true">QPushButton#btn_curtain
 {
-	background-image: url(:/images/curtain_off.png);
+	background-image: url(:/images/curtain_on.png);
 	background-color: transparent;
 }</string>
         </property>
@@ -636,7 +636,7 @@
     <widget class="QPushButton" name="btn_mode">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>80</x>
        <y>30</y>
        <width>50</width>
        <height>50</height>
@@ -666,6 +666,38 @@
      </property>
      <property name="flat">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_setting">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>50</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>50</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#btn_setting{
+	
+	background-image: url(:/images/chilun.png);
+	background-color:transparent;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>

@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-
 //显示数据
 void MainWindow::show_data(int index)
 {
@@ -22,6 +21,48 @@ void MainWindow::show_data(int index)
         ui->wet_value->setText(QString::number(value[index]));
         break;
     }
+}
+
+void MainWindow::control_threshold(int index, int flag)
+{
+
+    if(index == 1)
+    {
+        //光照阈值控制
+        if(led_status != flag)
+        {
+            qDebug() << "wwwwwwww\n";
+            QString style1 = "QPushButton#btn_led{background-image: url(:/images/led_%1.png);background-color: transparent;}";
+            ui->btn_led->setStyleSheet(style1.arg(flag == 0 ? "off" : "on")); //切换开关状态
+            led_status = flag;
+            char buf[2] = {2, led_status};
+            socket->write(buf, sizeof (buf));
+        }
+        qDebug() << "sssssss\n";
+    }else if(index == 2)
+    {
+        //温度阈值控制
+        if(airc_status != flag)
+        {
+            QString style2 = "QPushButton#btn_airc{background-image: url(:/images/airc_%1.png);background-color: transparent;}";
+            ui->btn_airc->setStyleSheet(style2.arg(flag == 0 ? "off" : "on")); //切换开关状态
+            char buf[2] = {4, airc_status};
+            socket->write(buf, sizeof (buf));
+        }
+    }else if(index == 3)
+    {
+        //湿度阈值控制
+        if(curtain_status != flag)
+        {
+            QString style3 = "QPushButton#btn_curtain{background-image: url(:/images/curtain_%1.png);background-color: transparent;}";
+            ui->btn_curtain->setStyleSheet(style3.arg(flag == 0 ? "off" : "on")); //切换开关状态
+            char buf[2] = {3, curtain_status};
+            socket->write(buf, sizeof (buf));
+        }
+    }
+
+
+
 }
 
 MainWindow::MainWindow(const QString &ip_address, qint16 ip_port, QWidget *parent)
@@ -86,10 +127,16 @@ void MainWindow::on_readData()
             curtain_status = buf[1];
             QString style = "QPushButton#btn_curtain{background-image: url(:/images/curtain_%1.png);background-color: transparent;}";
             ui->btn_curtain->setStyleSheet(style.arg(curtain_status == 0 ? "off" : "on"));//切换开关状态
-        }else if (buf[0] == 0x04) {//空调状态改变
+        }else if (buf[0] == 0x04) //空调状态改变
+        {
             airc_status = buf[1];
             QString style = "QPushButton#btn_airc{background-image: url(:/images/airc_%1.png);background-color: transparent;}";
             ui->btn_airc->setStyleSheet(style.arg(airc_status == 0 ? "off" : "on"));//切换开关状态
+        }else if (buf[0] == 0x06) //模式改变
+        {
+            mode = buf[1];
+            QString style = "QPushButton#btn_mode{background-image: url(:/images/%1_on.png);background-color: transparent;}";
+            ui->btn_mode->setStyleSheet(style.arg(mode == false ? "automode" : "manualmode"));//切换开关状态
         }else if(buf[0] == 0x00)    //获取传感器数据
         {
 
@@ -244,9 +291,26 @@ void MainWindow::on_btn_mode_clicked()
         mode = !mode;
         QString style = "#btn_mode{background-image: url(:/images/%1_on.png);background-color: transparent;}";
         ui->btn_mode->setStyleSheet(style.arg(mode == false ? "automode" : "manualmode"));
+        char buf[2] = {6, mode};
+        socket->write(buf, sizeof(buf));
     }else
     {
         QMessageBox::critical(this, tr("错误！"), tr("当前还未连接服务器，请先连接！"));
     }
 
+}
+
+
+void MainWindow::on_btn_setting_clicked()
+{
+    if(connect_status == true)
+    {
+        sets = new settings(socket, this);
+        sets->setWindowModality(Qt::ApplicationModal);
+        sets->show();
+    }
+    else
+    {
+        QMessageBox::critical(this, tr("错误！"), tr("当前还未连接服务器，请先连接！"));
+    }
 }

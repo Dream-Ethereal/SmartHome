@@ -19,7 +19,7 @@ static int curtain_status = 0;
 static int airc_status = 0;
 static int threhold_value[10] = {0};
 static char value[16] = {0};
-
+static int mode = 0;
 
 // struct sockaddr_in {
 //    sa_family_t    sin_family; /* address family: AF_INET */
@@ -129,6 +129,8 @@ void save_controller_status(const char* buf)
 		}
 		
 	}
+    else if (buf[0] == 0X06)    //模式
+        mode = buf[1];
 	else if (buf[0] == 0x00)	//传感器数据：0X 00 00 14 7F 00 14 7F 00 14 7F 00 14 7F 00 14 7F 7F
 	{
 		for(int i = 1; i < 17; i++)
@@ -169,6 +171,9 @@ void send_controller_status(int client)
 		buf6[i] = threhold_value[i - 1];
 	}
 	write(client, buf6, sizeof(buf6));
+
+    char buf7[2] = {6, mode};
+    write(client, buf7, sizeof(buf7));
 	// 解锁
 }
 

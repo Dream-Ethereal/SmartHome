@@ -18,5 +18,13 @@
         <file>manualmode_off.png</file>
         <file>automode_on.png</file>
         <file>manualmode_on.png</file>
+        <file>setext.png</file>
+        <file>chilun.png</file>
+        <file>confirm.png</file>
+        <file>anniu_add_down.png</file>
+        <file>anniu_add_up.png</file>
+        <file>anniu_div_down.png</file>
+        <file>anniu_div_up.png</file>
+        <file>setbg.png</file>
     </qresource>
 </RCC>

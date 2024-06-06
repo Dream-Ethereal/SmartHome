@@ -8,7 +8,7 @@ extern int led1_fd_bn, led2_fd_bn, led3_fd_bn;
 
 int door_status = 0;
 int led_status = 0;
-int curtain_status = 0;
+int curtain_status = 1;
 int airc_status = 0;
 
 
@@ -33,6 +33,22 @@ int main()
 
 	//网络初始化
 	init_network();
+
+	threshold_value[0] = 40;
+	threshold_value[1] = 90;
+	threshold_value[2] = 100;
+
+	//发送初始化数据
+	char buf1[2] = {1, door_status};
+	write(sockfd, buf1, sizeof(buf1));
+	char buf2[2] = {2, led_status};
+	write(sockfd, buf2, sizeof(buf2));
+	char buf3[2] = {3, curtain_status};
+	write(sockfd, buf3, sizeof(buf3));
+	char buf4[2] = {4, door_status};
+	write(sockfd, buf4, sizeof(buf4));
+	char buf5[2] = {6, mode};
+	write(sockfd, buf5, sizeof(buf5));
 
 	pthread_t pid, pid2, pid3, pid4;
 	pthread_create(&pid, NULL, config_set, NULL);

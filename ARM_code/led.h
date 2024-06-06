@@ -7,10 +7,10 @@
 
 extern int threshold_value[3];
 
-// extern int flag_data;
-// extern int mode;//手动模式关
-// extern int led_state;//关灯
-// extern int cur_data[5];//传感器数据
+extern int door_status;
+extern int led_status;
+extern int curtain_status;
+extern int airc_status;
 
 int led1_fd_tg, led2_fd_tg, led3_fd_tg;
 int led1_fd_bn, led2_fd_bn, led3_fd_bn;

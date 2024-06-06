@@ -46,6 +46,7 @@ public:
     QLabel *lux_union;
     QLabel *wet_union;
     QPushButton *btn_mode;
+    QPushButton *btn_setting;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -87,7 +88,7 @@ public:
         btn_curtain->setMaximumSize(QSize(200, 200));
         btn_curtain->setStyleSheet(QString::fromUtf8("QPushButton#btn_curtain\n"
 "{\n"
-"	background-image: url(:/images/curtain_off.png);\n"
+"	background-image: url(:/images/curtain_on.png);\n"
 "	background-color: transparent;\n"
 "}"));
         btn_curtain->setFlat(true);
@@ -239,7 +240,7 @@ public:
         wet_union->setAlignment(Qt::AlignCenter);
         btn_mode = new QPushButton(widget);
         btn_mode->setObjectName(QString::fromUtf8("btn_mode"));
-        btn_mode->setGeometry(QRect(50, 30, 50, 50));
+        btn_mode->setGeometry(QRect(80, 30, 50, 50));
         btn_mode->setMinimumSize(QSize(50, 50));
         btn_mode->setMaximumSize(QSize(50, 50));
         btn_mode->setStyleSheet(QString::fromUtf8("#btn_mode{\n"
@@ -248,6 +249,16 @@ public:
 "	background-color:transparent;\n"
 "}"));
         btn_mode->setFlat(true);
+        btn_setting = new QPushButton(widget);
+        btn_setting->setObjectName(QString::fromUtf8("btn_setting"));
+        btn_setting->setGeometry(QRect(10, 30, 50, 50));
+        btn_setting->setMinimumSize(QSize(50, 50));
+        btn_setting->setMaximumSize(QSize(50, 50));
+        btn_setting->setStyleSheet(QString::fromUtf8("#btn_setting{\n"
+"	\n"
+"	background-image: url(:/images/chilun.png);\n"
+"	background-color:transparent;\n"
+"}"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -288,6 +299,7 @@ public:
         lux_union->setText(QApplication::translate("MainWindow", "lux", nullptr));
         wet_union->setText(QApplication::translate("MainWindow", "%", nullptr));
         btn_mode->setText(QString());
+        btn_setting->setText(QString());
     } // retranslateUi
 
 };
