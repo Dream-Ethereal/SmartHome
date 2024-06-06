@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>settings</class>
+ <widget class="QDialog" name="settings">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>582</width>
+    <height>385</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>582</width>
+    <height>385</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>582</width>
+    <height>385</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>尘世七执政</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/images/pm.png</normaloff>:/images/pm.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>582</width>
+     <height>385</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>582</width>
+     <height>385</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>582</width>
+     <height>385</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#widget{
+	background-image: url(:/images/setbg.png);
+}</string>
+   </property>
+   <widget class="QPushButton" name="btn_confirm">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>140</y>
+      <width>103</width>
+      <height>103</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#btn_confirm{
+	
+	background-image: url(:/images/confirm.png);
+	background-color:transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tmp_value">
+    <property name="geometry">
+     <rect>
+      <x>123</x>
+      <y>103</y>
+      <width>120</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>120</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>120</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>10</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="wet_value">
+    <property name="geometry">
+     <rect>
+      <x>123</x>
+      <y>174</y>
+      <width>120</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>120</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>120</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>30</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lux_value">
+    <property name="geometry">
+     <rect>
+      <x>123</x>
+      <y>245</y>
+      <width>120</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>120</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>120</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>23</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>90</y>
+      <width>171</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="tmp_union">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>35</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>35</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#tmp_union{
+	background-color: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string>℃</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_up1">
+         <property name="minimumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#btn_up1{
+	
+	background-image: url(:/images/anniu_add_up.png);
+	background-color:transparent;
+}
+#btn_up1::pressed{
+	
+	background-image: url(:/images/anniu_add_down.png);
+	background-color:transparent;
+}
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_down1">
+         <property name="minimumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#btn_down1{
+	
+	background-image: url(:/images/anniu_div_up.png);
+	background-color:transparent;
+}
+#btn_down1::pressed{
+	
+	background-image: url(:/images/anniu_div_down.png);
+	background-color:transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="wet_union">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>35</horstretch>
+           <verstretch>40</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>35</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>%</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_up2">
+         <property name="minimumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#btn_up2{
+	
+	background-image: url(:/images/anniu_add_up.png);
+	background-color:transparent;
+}
+#btn_up2::pressed{
+	
+	background-image: url(:/images/anniu_add_down.png);
+	background-color:transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_down2">
+         <property name="minimumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#btn_down2{
+	
+	background-image: url(:/images/anniu_div_up.png);
+	background-color:transparent;
+}
+#btn_down2::pressed{
+	
+	background-image: url(:/images/anniu_div_down.png);
+	background-color:transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="lux_union">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>lux</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_up3">
+         <property name="minimumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#btn_up3{
+	
+	background-image: url(:/images/anniu_add_up.png);
+	background-color:transparent;
+}
+#btn_up3::pressed{
+	
+	background-image: url(:/images/anniu_add_down.png);
+	background-color:transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_down3">
+         <property name="minimumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#btn_down3{
+	
+	background-image: url(:/images/anniu_div_up.png);
+	background-color:transparent;
+}
+#btn_down3::pressed{
+	
+	background-image: url(:/images/anniu_div_down.png);
+	background-color:transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
